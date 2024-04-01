@@ -20,6 +20,6 @@ const styles=StyleSheet.create({
         textAlign:'center',
         borderColor:'#ddb52f',
         borderWidth:2,
-        padding:12
+        padding:11
     }
 })
