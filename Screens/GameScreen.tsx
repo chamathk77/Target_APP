@@ -3,6 +3,8 @@ import { Alert, StyleSheet, Text, View } from 'react-native'
 import Title from '../Component/Title'
 import NumberContainer from '../Component/game/NumberContainer'
 import PrimaryButton from '../Component/PrimaryButton'
+import Card from '../Component/card'
+import InstructionText from '../Component/InstructionText'
 
  function generateRandomBetween(min: number,max: number,exclude: any){
     const rndNum = Math.floor(Math.random()* (max-min))+min
@@ -63,12 +65,21 @@ import PrimaryButton from '../Component/PrimaryButton'
 
         
         {/* GUESS */}
-        <View>
-            <Text>Higher or lower</Text>
+        <Card>
+            <InstructionText style={styles.instructionText} >Higher or lower</InstructionText>
 
-            <View>
-              <PrimaryButton onPress={nextGuessHandler.bind(this,'lower')}>-</PrimaryButton>
-              <PrimaryButton onPress={nextGuessHandler.bind(this,'greater')}>+</PrimaryButton>
+            <View style={styles.buttonsContainer}>
+              <View style={styles.buttonContainer}>
+                <PrimaryButton onPress={nextGuessHandler.bind(this,'lower')}>-</PrimaryButton>
+
+              </View>
+
+              <View style={styles.buttonContainer}>
+
+                <PrimaryButton onPress={nextGuessHandler.bind(this,'greater')}>+</PrimaryButton>
+
+
+              </View>
               
             </View>
             
@@ -79,7 +90,7 @@ import PrimaryButton from '../Component/PrimaryButton'
             {/* +
             - */}
 
-        </View>
+        </Card>
         <View>
             {/* Log Round */}
         </View>
@@ -95,5 +106,17 @@ const styles=StyleSheet.create({
         flex:1,
         padding:24
     },
+    buttonsContainer:{
+      flexDirection:'row',
+    },
+
+    buttonContainer:{
+      flex:1
+    },
+    instructionText:{
+      marginBottom:12
+
+    }
+
     
 })

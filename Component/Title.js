@@ -19,7 +19,7 @@ const styles=StyleSheet.create({
         fontWeight:'bold',
         color:'white',
         textAlign:'center',
-        borderColor:Colors.accent500,
+        borderColor:'white',
         borderWidth:2,
         padding:11
     }
