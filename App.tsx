@@ -3,6 +3,7 @@ import {ImageBackground, SafeAreaView, StyleSheet, Text, View} from 'react-nativ
 import StarGameScreen from './Screens/StarGameScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import GameScreen from './Screens/GameScreen';
+import Colors from './constant/colors';
 function App() {
   // eslint-disable-next-line no-lone-blocks
   const [userNumber,setUserNumber]=useState();
@@ -18,7 +19,7 @@ function App() {
   let screen = <StarGameScreen onPickNumber={pickedNumberHandler} />
 
   if(userNumber){
-    screen =<GameScreen/>
+    screen =<GameScreen userNumber={userNumber} />
   }
 
 
@@ -27,7 +28,7 @@ function App() {
   
     return (
 
-      <LinearGradient colors={['#4e0329','#ddb52f']} style={styles.rootScreen}>
+      <LinearGradient colors={[Colors.primary700,Colors.accent500]} style={styles.rootScreen}>
         <ImageBackground 
           source={require('./assets/images/background.png')}
           resizeMode='cover'
