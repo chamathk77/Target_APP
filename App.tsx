@@ -4,24 +4,35 @@ import StarGameScreen from './Screens/StarGameScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import GameScreen from './Screens/GameScreen';
 import Colors from './constant/colors';
+import GameOverScreen from './Screens/GameOverScreen';
 function App() {
   // eslint-disable-next-line no-lone-blocks
   const [userNumber,setUserNumber]=useState();
+  const [gameIsOver,setGameIsOver]=useState(false)
 
   function pickedNumberHandler(pickedNumber:any){
     setUserNumber(pickedNumber)
     console.log(pickedNumber)
-   
-    
+    setGameIsOver(false)
 
   }
+  function gameOverHandler(){
+    setGameIsOver(true)
+
+  }
+
 
   let screen = <StarGameScreen onPickNumber={pickedNumberHandler} />
 
   if(userNumber){
-    screen =<GameScreen userNumber={userNumber} />
+    screen =<GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
   }
 
+  if(gameIsOver && userNumber){
+    screen= <GameOverScreen/>
+  }
+
+ 
 
 
 
