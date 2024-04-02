@@ -6,6 +6,7 @@ import Title from '../Component/Title'
 import Card from '../Component/card'
 import InstructionText from '../Component/InstructionText'
 
+
 function  StarGameScreen (props)  {
 
   const [enteredNumber,setEnteredNumber]=useState('')
@@ -43,32 +44,32 @@ function  StarGameScreen (props)  {
 
         <Card >
 
-          <InstructionText >Enter Number</InstructionText>
-          <TextInput
-          style={styles.numberInput} 
-          maxLength={2} 
-          keyboardType='number-pad' 
-          autoCapitalize='none'
-          autoCorrect={false}
-          value={enteredNumber}
-          onChangeText={numberInputHandler}
+        <InstructionText >Enter Number</InstructionText>
+        <TextInput
+         style={styles.numberInput} 
+         maxLength={2} 
+         keyboardType='number-pad' 
+         autoCapitalize='none'
+         autoCorrect={false}
+         value={enteredNumber}
+         onChangeText={numberInputHandler}
 
-          />
+        />
+        
           
-            
-          
+        
 
-          <View style={styles.buttonsContainer}>
+        <View style={styles.buttonsContainer}>
 
-            <View style={styles.buttonContainer}>
-              <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
-            </View>
-            <View style={styles.buttonContainer}>
-              <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
-            </View>
-            
-            
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
           </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+          </View>
+          
+          
+        </View>
           
       </Card> 
 

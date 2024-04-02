@@ -6,6 +6,8 @@ import PrimaryButton from '../Component/PrimaryButton'
 import Card from '../Component/card'
 import InstructionText from '../Component/InstructionText'
 
+
+
  function generateRandomBetween(min: number,max: number,exclude: any){
     const rndNum = Math.floor(Math.random()* (max-min))+min
 
@@ -70,13 +72,17 @@ import InstructionText from '../Component/InstructionText'
 
             <View style={styles.buttonsContainer}>
               <View style={styles.buttonContainer}>
-                <PrimaryButton onPress={nextGuessHandler.bind(this,'lower')}>-</PrimaryButton>
+                <PrimaryButton onPress={nextGuessHandler.bind(this,'lower')}>
+                  -
+                </PrimaryButton>
 
               </View>
 
               <View style={styles.buttonContainer}>
 
-                <PrimaryButton onPress={nextGuessHandler.bind(this,'greater')}>+</PrimaryButton>
+                <PrimaryButton onPress={nextGuessHandler.bind(this,'greater')}>
+                  +
+                </PrimaryButton>
 
 
               </View>
