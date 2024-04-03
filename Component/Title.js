@@ -15,12 +15,14 @@ export default Title
 
 const styles=StyleSheet.create({
     title:{
-        fontSize:25,
+        fontSize:20,
         fontWeight:'bold',
         color:'white',
         textAlign:'center',
         borderColor:'white',
         borderWidth:2,
-        padding:11
+        padding:11,
+        maxWidth:'80%'
+
     }
 })
