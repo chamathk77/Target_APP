@@ -4,7 +4,7 @@ import Title from '../Component/Title'
 import Colors from '../constant/colors'
 import PrimaryButton from '../Component/PrimaryButton'
 
-function GameOverScreen(){
+function GameOverScreen(props){
   
     return (
       <View style={styles.rootContainer}>
@@ -14,9 +14,9 @@ function GameOverScreen(){
 
         </View>
         <Text style={styles.summaryText}>
-            Your phone need <Text style={styles.highlight}>x</Text> rounds to guess the number<Text style={styles.highlight}> y</Text>
+            Your phone need <Text style={styles.highlight}>{props.roundNumber}</Text> rounds to guess the number<Text style={styles.highlight}> {props.usersNumber}</Text>
         </Text>
-        <PrimaryButton>start new Game</PrimaryButton>
+        <PrimaryButton onPress={props.onStartNewGame}>start new Game</PrimaryButton>
       </View>
     )
   }

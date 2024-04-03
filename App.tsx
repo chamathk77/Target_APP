@@ -9,6 +9,7 @@ function App() {
   // eslint-disable-next-line no-lone-blocks
   const [userNumber,setUserNumber]=useState();
   const [gameIsOver,setGameIsOver]=useState(false)
+  const [guessRounds,setGuessRounds]=useState(0)
 
   function pickedNumberHandler(pickedNumber:any){
     setUserNumber(pickedNumber)
@@ -16,8 +17,15 @@ function App() {
     setGameIsOver(false)
 
   }
-  function gameOverHandler(){
+  function gameOverHandler(numberOfRound){
     setGameIsOver(true)
+    setGuessRounds(numberOfRound)
+
+  }
+  function startNewGameHandler(){
+    setUserNumber(null)
+    setGuessRounds(0)
+    
 
   }
 
@@ -29,7 +37,8 @@ function App() {
   }
 
   if(gameIsOver && userNumber){
-    screen= <GameOverScreen/>
+    screen= <GameOverScreen usersNumber={userNumber} roundNumber={guessRounds} 
+    onStartNewGame={startNewGameHandler}/>
   }
 
  
